@@ -67,20 +67,50 @@ const Dashboard = () => {
           <div className="aurora-mesh-overlay" />
         </div>
 
-        {/* Top Status Bar (Clean mobile-first header) */}
+        {/* Top Status Bar (Responsive Header) */}
         <header className="mobile-header">
+          {/* Tablet/Desktop Exclusive Brand Header Accent */}
+          <div className="header-brand-desktop" aria-hidden="true">
+            <span className="header-crest">XYZ</span>
+            <span className="header-brand-text">HOTEL & RESORT</span>
+          </div>
+
           <div className="header-status">
             <span className="live-indicator">
               <span className="pulse-dot" />
               Portal Live
             </span>
           </div>
-          <div className="header-time-badge">
-            <span className="current-clock">{currentTime}</span>
+
+          <div className="header-right-group">
+            <div className="header-time-badge">
+              <span className="current-clock">{currentTime}</span>
+            </div>
+
+            {/* Tablet/Desktop Quick Direct Call / WhatsApp */}
+            <div className="header-desktop-actions">
+              <a
+                href={HOTEL_LINKS.receptionPhone}
+                className="header-pill-btn"
+                title="Call Front Desk Concierge"
+              >
+                📞 Dial 0
+              </a>
+              <a
+                href={HOTEL_LINKS.receptionWhatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="header-pill-btn head-whatsapp"
+                title="WhatsApp Concierge"
+                onClick={() => triggerHaptic(15)}
+              >
+                💬 WhatsApp
+              </a>
+            </div>
           </div>
         </header>
 
-        {/* Hero Branding Section (Photo removed in favor of aesthetic celestial canopy) */}
+        {/* Hero Branding Section */}
         <section className="hero-section">
           <div className="hero-aurora-canopy">
             <div className="canopy-light-ribbon ribbon-1" />
@@ -111,7 +141,7 @@ const Dashboard = () => {
           </div>
         </section>
 
-        {/* Guest Status Strip */}
+        {/* Guest Status Strip (Expands on Tablet/Desktop) */}
         <section className="status-strip">
           <div className="status-chip">
             <span className="status-chip-icon">🛎️</span>
@@ -127,15 +157,31 @@ const Dashboard = () => {
               <span className="status-chip-sub">Open Till 11:30 PM</span>
             </div>
           </div>
+          <div className="status-chip desktop-chip">
+            <span className="status-chip-icon">⚡</span>
+            <div className="status-chip-info">
+              <span className="status-chip-title">High-Speed Wi-Fi</span>
+              <span className="status-chip-sub">Complimentary 1Gbps</span>
+            </div>
+          </div>
+          <div className="status-chip desktop-chip">
+            <span className="status-chip-icon">🚗</span>
+            <div className="status-chip-info">
+              <span className="status-chip-title">Valet Parking</span>
+              <span className="status-chip-sub">Available 24/7</span>
+            </div>
+          </div>
         </section>
 
         {/* Main Actions: MENU, REVIEW, INSTAGRAM & WI-FI */}
         <main className="action-buttons-container">
-            <div className="section-heading">
-              <h2 className="section-title">Essential Guest Services</h2>
-              <p className="section-desc">Tap below to access instant services</p>
-            </div>
+          <div className="section-heading">
+            <h2 className="section-title">Essential Guest Services</h2>
+            <p className="section-desc">Tap below to access instant services</p>
+          </div>
 
+          {/* Cards Grid: 1-col on mobile, 3-col on tablet & desktop */}
+          <div className="cards-grid">
             {/* 1. MENU BUTTON (Opens /menu.jpg directly) */}
             <a
               id="btn-menu"
@@ -246,7 +292,10 @@ const Dashboard = () => {
                 </div>
               </div>
             </a>
+          </div>
 
+          {/* Utilities Grid: 1-col on mobile, 2-col on tablet & desktop */}
+          <div className="utilities-grid">
             {/* Wi-Fi Quick Connection Card */}
             <div className="wifi-card">
               <div className="wifi-icon-badge">📶</div>
@@ -300,19 +349,38 @@ const Dashboard = () => {
                 </a>
               </div>
             </div>
-          </main>
-
-        {/* Footer */}
-        <footer className="mobile-footer">
-          <div className="footer-logo">
-            <span className="footer-monogram">XYZ</span>
-            <span className="footer-title">HOTEL & RESORT</span>
           </div>
-          <p className="footer-address">
-            100 Ocean Avenue, Luxury Boulevard • Concierge Ext: 0
-          </p>
+        </main>
+
+        {/* Footer (Responsive layout for mobile, tablet, and desktop) */}
+        <footer className="mobile-footer">
+          <div className="footer-content-wrap">
+            <div className="footer-brand-section">
+              <div className="footer-logo">
+                <span className="footer-monogram">XYZ</span>
+                <span className="footer-title">HOTEL & RESORT</span>
+              </div>
+              <p className="footer-tagline">
+                Luxury Resort & Suites • Elevating guest hospitality since 2018
+              </p>
+            </div>
+
+            <div className="footer-info-section">
+              <p className="footer-address">
+                100 Ocean Avenue, Luxury Boulevard • Concierge Ext: 0
+              </p>
+              <div className="footer-highlights">
+                <span>🛎️ 24/7 Front Desk</span>
+                <span className="footer-divider">•</span>
+                <span>🍽️ Koyla Dining Till 11:30 PM</span>
+                <span className="footer-divider">•</span>
+                <span>📶 Complimentary Wi-Fi</span>
+              </div>
+            </div>
+          </div>
+
           <p className="footer-copyright">
-            © {CURRENT_YEAR} XYZ Hotel. Designed for mobile guest experience.
+            © {CURRENT_YEAR} XYZ Hotel & Resort. Designed for guest luxury on mobile, tablet & desktop.
           </p>
         </footer>
       </div>
