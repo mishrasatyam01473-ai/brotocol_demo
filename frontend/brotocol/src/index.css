@@ -1,21 +1,7 @@
 :root {
-  --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  
-  --bg-dark: #080716;
-  --bg-surface: #100d28;
-  --bg-card: rgba(22, 18, 44, 0.72);
-  --bg-card-hover: rgba(30, 24, 60, 0.88);
-
-  --accent-aurora: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #f97316 100%);
-  --accent-instagram: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  --accent-menu: linear-gradient(135deg, #f97316 0%, #db2777 100%);
-  --accent-review: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
-
-  --text-main: #f8fafc;
-  --text-muted: #cbd5e1;
-  --text-dim: #94a3b8;
-
+  --font-main: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --bg-dark: #08080a;
+  --text-main: #ffffff;
   color-scheme: dark;
 }
 
@@ -30,7 +16,7 @@ html, body {
   min-height: 100%;
   background-color: var(--bg-dark);
   color: var(--text-main);
-  font-family: var(--font-body);
+  font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
